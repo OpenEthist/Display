@@ -4,6 +4,7 @@ mod music;
 mod screens;
 mod settings;
 mod theme;
+mod spotify;
 
 use iced::{Element, Subscription};
 

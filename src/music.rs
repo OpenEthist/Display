@@ -236,7 +236,7 @@ fn spotify() -> impl Stream<Item = MusicMessage> {
     let audio_format = AudioFormat::default();
     let connect_config = ConnectConfig {
         disable_volume: false,
-        name: "Ethist".to_string(),
+        name: "Ethist Display".to_string(),
         ..Default::default()
     };
     let mixer_config = MixerConfig::default();

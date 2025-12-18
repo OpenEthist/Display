@@ -2,7 +2,7 @@ mod components;
 mod http_cache;
 mod music;
 mod screens;
-mod setup;
+mod settings;
 mod theme;
 
 use iced::{Element, Subscription};
@@ -10,6 +10,7 @@ use iced::{Element, Subscription};
 use music::{Music, MusicMessage};
 use screens::clock::{ClockScreen, ClockScreenMessage};
 use theme::DEFAULT_THEME;
+use settings::Settings;
 
 enum Screen {
     Clock,
@@ -20,6 +21,7 @@ struct App {
     clock: ClockScreen,
     music: Music,
 
+    settings: Settings,
     screen: Screen,
 }
 
@@ -33,6 +35,7 @@ impl App {
         Self {
             clock: ClockScreen::new(),
             music: Music::new(),
+            settings: Settings::default(),
 
             screen: Screen::Clock,
         }

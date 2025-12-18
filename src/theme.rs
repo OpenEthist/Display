@@ -1,4 +1,8 @@
 use iced::{Font, Theme};
 
 pub const DEFAULT_THEME: Theme = Theme::CatppuccinMocha;
-pub const DEFAULT_FONT: Font = Font::with_name("Roboto");
+const DEFAULT_FONT: &str = "Roboto";
+
+pub fn get_font() -> Font {
+    Font::with_name(DEFAULT_FONT)
+}

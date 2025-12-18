@@ -5,6 +5,8 @@ use iced::time::{self, milliseconds, seconds};
 use iced::widget::text;
 use iced::{Element, Subscription};
 
+use crate::theme::get_font;
+
 pub struct Clock {
     now: chrono::DateTime<chrono::Local>,
     seconds: bool,
@@ -39,7 +41,7 @@ impl Clock {
 
         let meridiem_text = if meridiem { "PM" } else { "AM" };
 
-        let mut font = Font::with_name("Roboto");
+        let mut font = get_font();
         font.weight = Weight::Bold;
 
         let text = text!("{hour}:{minute:0>2} {meridiem_text}")

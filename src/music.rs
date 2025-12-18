@@ -29,7 +29,7 @@ use std::{
 };
 
 use crate::http_cache;
-use crate::theme::DEFAULT_FONT;
+use crate::theme::get_font;
 
 const CACHE: &str = ".cache";
 const CACHE_FILES: &str = ".cache/files";
@@ -98,8 +98,8 @@ impl Music {
             column![Text::new("").size(32.0), Text::new("").size(18.0)].spacing(4),
             img,
             column![
-                Text::new(&song.name).font(DEFAULT_FONT).size(28.0),
-                Text::new(&song.artist).font(DEFAULT_FONT).size(18.0)
+                Text::new(&song.name).font(get_font()).size(28.0),
+                Text::new(&song.artist).font(get_font()).size(18.0)
             ]
             .spacing(4)
         ]
